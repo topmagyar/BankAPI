@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @RequestMapping("/auth") //http://localhost:8080/auth/
 public interface AuthenticationController {
     @PostMapping("/login") //POST http://localhost:8080/auth/login
     AuthLoginResponse login(@RequestBody AuthLoginRequest request);
     @PostMapping("/register") //POST http://localhost:8080/auth/register
-    AuthRegisterResponse register(@RequestBody AuthRegisterRequest request);
+    AuthRegisterResponse register(@Valid @RequestBody AuthRegisterRequest request);
 }

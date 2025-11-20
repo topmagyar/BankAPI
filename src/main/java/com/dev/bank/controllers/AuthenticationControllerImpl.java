@@ -22,6 +22,6 @@ public class AuthenticationControllerImpl implements AuthenticationController {
 
     @Override
     public AuthRegisterResponse register(AuthRegisterRequest request) {
-        return null;
+        return service.register(request);
     }
 }
